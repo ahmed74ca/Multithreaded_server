@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package messages;
+
+message EchoMessage {
+    string content = 1;
+}
+
+message AddRequest {
+    int32 a = 1;
+    int32 b = 2;
+}
+
+message AddResponse {
+    int32 result = 1;
+}
+
+message ClientMessage {
+    oneof message {
+        EchoMessage echo_message = 1;
+        AddRequest add_request = 2;
+    }
+}
+
+message ServerMessage {
+    oneof message {
+        EchoMessage echo_message = 1;
+        AddResponse add_response = 2;
+    }
+}
