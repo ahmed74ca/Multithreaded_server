@@ -40,8 +40,8 @@ The server was successfully transitioned to handle multiple clients concurrently
      return Err(io::Error::new(io::ErrorKind::InvalidData, "Encoding error"));
  }
 ```
-3. **Validation of IP and Port: Uses to_socket_addrs to validate the IP and port before attempting to connect.
-4. **Proper TCP Stream Shutdown: Ensures a proper shutdown during disconnection
+3. Validation of IP and Port: Uses to_socket_addrs to validate the IP and port before attempting to connect.
+4. Proper TCP Stream Shutdown: Ensures a proper shutdown during disconnection
 ```rust
 stream.shutdown(std::net::Shutdown::Both)?;
 ```
